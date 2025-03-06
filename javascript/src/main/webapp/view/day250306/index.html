@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/mhDoLbDldZc3qpsJHpLogda//BVZbgYuw6kof4u2FrCedxOtgRZDTHgHUhOCVim" crossorigin="anonymous"></script>
+     <style>
+      /* header 头部导航 */
+      .header{
+        height: 50px;
+      }
+    .header .nav .search{
+        background-color: red;
+        height: 50px;
+      }
+      .search1 .btn1{
+        padding: 0;
+        margin: 0;
+      }
+      .header .login{
+        background-color: purple;
+      }
+      /* content 内容区域 */
+      .content{
+        height: 300px;
+      }
+      .container .content .left{
+        background-color: green;
+      }
+      .container .content .center{
+        background-color: pink;
+      }
+      .container .content .right{
+        background-color: blue;
+      }
+
+      .suc-btn{
+        background-color: purple;
+        width: 200px;
+      }
+     </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row header">
+            <div class="col-md-9 nav">
+                    <div class="col-md-9 search1">
+                        <input type="text" class="form-control" placeholder="请输入搜索内容">
+                    </div>
+                    <div class="col-md-3 btn1">
+                        <button class="btn btn-primary">搜索</button>
+                    </div>
+            </div>
+            <div class="col-md-3 login"></div>
+        </div>
+        <div class="row content">
+            <div class="col-md-2 left"></div>
+            <div class="col-md-7 center">
+                <script>
+                    const arr = [
+                        {id:1, name: '张三', age: 18, gender: '男', address: '北京'},
+                        {id:2, name: '张四', age: 18, gender: '男', address: '北京'},
+                        {id:3, name: '张五', age: 18, gender: '男', address: '北京'},
+                        {id:4, name: '张六', age: 18, gender: '男', address: '北京'},
+                    ];
+                    document.write(`
+                    <table class="table table-bordered table-striped table-hover">
+                        <tr>
+                            <th>编号</th>
+                            <th>姓名</th>
+                            <th>年龄</th>
+                            <th>性别</th>
+                            <th>地址</th>
+                        </tr>
+                    `);
+                        if(arr.length > 0){
+                        for(let i = 0; i < arr.length; i++){
+                            document.write(`
+                                <tr>
+                                <td>${arr[i].id}</td>
+                                <td>${arr[i].name}</td>
+                                <td>${arr[i].age}</td>
+                                <td>${arr[i].gender}</td>
+                                <td>${arr[i].address}</td>
+                                </tr>
+                            `);
+                        }}
+                    document.write(`</table>`);
+                    
+                </script>
+            </div>
+            <div class="col-md-3 right">
+                <div class="btn btn-success suc-btn">success</div>
+                <div class="btn btn-info">info</div>
+                <div class="btn btn-danger">danger</div>
+                <div class="btn btn-primary">primary</div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
