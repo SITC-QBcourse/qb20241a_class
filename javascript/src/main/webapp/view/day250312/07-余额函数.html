@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getMoney(){
+            const num1 = +prompt('输入银行卡余额：');
+            const num2 = +prompt('输入食宿消费：');
+            const num3 = +prompt('输入生活消费：');
+            let money = num1 - num2 - num3;
+            return money;
+        }
+        document.write(getMoney());
+    </script>
+</body>
+</html>

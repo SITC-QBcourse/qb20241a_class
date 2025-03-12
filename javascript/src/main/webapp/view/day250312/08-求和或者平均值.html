@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function handleData(arr, bool){
+            let sum = 0;
+            for(let i of arr){
+                sum += i;
+            }
+            if(bool === false || bool === 0){
+                //平均
+                return sum / arr.length;
+            }else{
+                //求和
+                return sum;
+            }
+        }
+
+        document.write(handleData([15,19,21,33,18,24], false));
+        document.write(`<br>`);
+        document.write(handleData([15,19,21,33,18,24], 0));
+        document.write(`<br>`);
+        document.write(handleData([15,19,21,33,18,24], true));
+        document.write(`<br>`);
+        document.write(handleData([15,19,21,33,18,24], 1));
+        document.write(`<br>`);
+        document.write(handleData([15,19,21,33,18,24], 'abc'));
+        document.write(`<br>`);
+        document.write(handleData([15,19,21,33,18,24]));
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>渲染图片案例</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    .box {
+      width: 540px;
+      margin: 20px auto;
+    }
+
+    .box ul{
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+
+    .box li {
+      width: 100px;
+      height: 100px;
+      margin: 0 10px 10px 0;
+    }
+
+    .box li:nth-child(5n) {
+      margin-right: 0;
+    }
+
+    .box li img {
+      width: 100%;
+      height: 100%;
+      border: 2px solid #258DF2;
+      border-radius: 10px 0 10px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    const imgs = [];
+    for(let i = 0; i < 20; i++){
+      imgs.push(`${i+1}.webp`);
+    }
+    let num = +prompt('请输入要渲染的图片数量:');
+    const arr = [];
+    for(let i = 0; i < num ;){
+      let ran = Math.floor(Math.random() * 20);//1~20
+      for(let j = 0; j < arr.length - 1; j++){
+        if(arr[i] === arr[j]){
+          break;
+        }
+      }
+      arr[i] = imgs[ran];
+      i++;
+    }
+    document.write(`
+      <div class="box">
+    <ul>
+      `);
+      for(let i = 0; i < num; i++){
+        document.write(`
+      <li>
+        <img src="./images/${arr[i]}" alt="">
+      </li>
+      `)
+      }
+      document.write(`</ul>
+  </div>
+    `);
+  </script>
+</body>
+
+</html>

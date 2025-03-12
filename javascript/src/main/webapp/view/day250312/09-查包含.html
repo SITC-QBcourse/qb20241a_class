@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function some(ele, arr = []) {
+             // 里面写业务逻辑
+             let bool = 0;
+            arr.forEach((element, index)=>{
+                if(ele === element){
+                    bool = index;
+                }
+            });
+            return bool ? bool : -1;
+            
+        }
+        let re = some('荔枝', ['苹果', '香蕉', '橘子', '荔枝', '梨子'])
+        document.write(re) // 3
+        let re1 = some('榴莲', ['苹果', '香蕉', '橘子', '荔枝', '梨子'])
+        document.write(re1) // -1
+    </script>
+</body>
+</html>
