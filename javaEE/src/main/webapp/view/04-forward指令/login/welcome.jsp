@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!-- 该页面会出现错误，所以当错误出现的时候，跳转到错误页进行显示 -->
-<%@ page errorPage="04-fixed.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +8,8 @@
 </head>
 <body>
 <%
-response.setStatus(500);
+String name = request.getParameter("name");
 %>
+<h1>欢迎<%=name %>光临！</h1>
 </body>
 </html>

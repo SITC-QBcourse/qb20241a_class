@@ -7,4 +7,21 @@
   </parent>
   <artifactId>javaEE</artifactId>
   <packaging>war</packaging>
+  
+    <properties>
+
+        <!-- mysql -->
+        <mysql.version>9.3.0</mysql.version>
+
+    </properties>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+    </dependencies>
+  
 </project>
